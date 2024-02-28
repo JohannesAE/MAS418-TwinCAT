@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="P1" Id="{9a0ff27e-0c69-443b-9a24-a2961848c4cd}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM P1
+VAR
+	pPointer 	  : POINTER TO DATE_AND_TIME := ADR(GVL.dtDateTime);
+	rRefrencetest : REFERENCE TO TIME REF=GVL.tTime;
+	pArrayref 	  : REFERENCE TO ARRAY[1..4] OF DATE REF=GVL.aArrayTest;
+	fbTON		  : TON;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[pPointer^ := DT#2023-02-08-15:31:19;
+
+rRefrencetest := T#1S;
+
+pArrayref[3] :=D#2023-02-25;
+
+GVL.sensor1 := Sensor_brands.Parker;
+
+fbTON (IN:=GVL.bTimerStart, PT:= GVL.tTimer, Q=>GVL.bQStatus, ET=>GVL.tElapsedTime);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

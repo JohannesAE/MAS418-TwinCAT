@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="fDegToRad" Id="{dc27d456-5289-4572-b677-fc28a12c224a}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION fDegToRad : REAL
+VAR_INPUT
+	rDegrees		:REAL;
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fDegToRad:=((rDegrees*PI)/180);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

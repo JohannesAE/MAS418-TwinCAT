@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <GVL Name="GVL" Id="{89f3530d-76ea-48de-a63b-312a6b55906b}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	dtDateTime : DATE_AND_TIME := DT#2024-02-26-13:44:19;
+	tTime 	   : TIME 		   := T#5S;
+	aArrayTest : ARRAY[1..4] OF DATE := [D#2023-02-07, D#2023-02-08, D#2023-02-09, D#2023-02-10];
+	sensor1		  : Sensor_brands;
+	bTimerStart   : BOOL 	   := 0;
+	tTimer 		  : TIME 	   :=T#10S;
+	bQStatus	  : BOOL;
+	tElapsedTime  : TIME	   :=T#0S;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

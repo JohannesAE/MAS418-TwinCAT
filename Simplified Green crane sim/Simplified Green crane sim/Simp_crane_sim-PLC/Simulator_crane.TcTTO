@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Task Name="Simulator_crane" Id="{e5901680-086d-4276-8133-774eb44d907b}">
+    <!--CycleTime in micro seconds.-->
+    <CycleTime>100</CycleTime>
+    <Priority>1</Priority>
+    <PouCall>
+      <Name>P_CraneSim</Name>
+    </PouCall>
+    <TaskFBGuid>{258328dc-aa54-4b28-9d61-9f2af7a91935}</TaskFBGuid>
+    <Fb_init>{9c8dd704-975e-4707-a300-b9b10f70ef44}</Fb_init>
+    <Fb_exit>{eb6189f5-c222-4a98-8121-3f8384a58a2b}</Fb_exit>
+    <CycleUpdate>{43d40116-1a62-4c1e-8ad2-27c949294bd9}</CycleUpdate>
+    <PostCycleUpdate>{47e1d5e1-3bf6-4b4f-ab1a-1f2b91ebb5a4}</PostCycleUpdate>
+  </Task>
+</TcPlcObject>

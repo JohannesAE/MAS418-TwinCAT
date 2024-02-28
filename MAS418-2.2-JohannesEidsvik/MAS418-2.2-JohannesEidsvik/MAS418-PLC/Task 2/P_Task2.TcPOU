@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="P_Task2" Id="{b0fdee63-e475-4010-8043-331284731c8b}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM P_Task2
+VAR
+	fbTOF		: TOF;
+	functest	:REAL;
+	degval 		:REAL:=180;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbTOF(
+	IN		:=GVL_task2.stTimer2.bTimerStart2,
+	PT		:=GVL_task2.stTimer2.tTimer2,
+	Q		=>GVL_task2.stTimer2.bQStatus2,
+	ET		=>GVL_task2.stTimer2.tElapsedTime2
+);
+
+GVL_task2.rMotor1Pos:=fDegToRad(rDegrees:=degval);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

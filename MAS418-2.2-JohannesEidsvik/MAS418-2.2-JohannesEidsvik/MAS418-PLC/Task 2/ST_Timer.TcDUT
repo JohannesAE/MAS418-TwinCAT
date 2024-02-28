@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="ST_Timer" Id="{2d8dfdc3-4553-4325-9e83-bd5b50396288}">
+    <Declaration><![CDATA[TYPE ST_Timer :
+STRUCT
+	bTimerStart   : BOOL 	   := 0;
+	fbTON2 		  : TON;
+	bQStatus	  : BOOL;
+	tElapsedTime  : TIME	   :=T#0S;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

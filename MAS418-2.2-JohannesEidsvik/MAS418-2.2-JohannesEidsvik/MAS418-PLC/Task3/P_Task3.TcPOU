@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="P_Task3" Id="{d612087c-207f-4ba9-b1ed-3ff648100c0e}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM P_Task3
+VAR
+	fbRTrig			: R_TRIG;
+	bSpeedCTRL		: BOOL;
+	fSpeedValue		: REAL;
+	bSpeedUpdate	: BOOL;
+	x				: INT :=3;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbRTrig(CLK:=bSpeedCTRL,
+		Q=>bSpeedUpdate);
+		
+CASE x OF//Change input Motorspeed value
+	1:
+	 	GVL_Task3.stMotorParam1.rMaxSpeed := 1000;
+	2:
+	    GVL_Task3.stMotorParam1.rMaxSpeed := 2000;
+	3:
+		GVL_Task3.stMotorParam1.rMaxSpeed := 3000;
+	4: 
+		GVL_Task3.stMotorParam1.rMaxSpeed := 4000;	
+END_CASE
+
+fUpdateparam(bUpdateValue:=bSpeedUpdate,
+			 fNewValue:=fSpeedValue,
+			 stMotorParameters := GVL_Task3.stMotorParam1);
+
+fUpdateparam2(bUpdateValue:=bSpeedUpdate,
+			 fNewValue:=fSpeedValue,
+			 stMotorParameters := GVL_Task3.stMotorParam1);
+			 ]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
